@@ -28,12 +28,9 @@ Starting with four J-K flip-flops connected in such a way to always be in the �
 
 The Q outputs of each flip-flop will serve as the respective binary bits of the final, four-bit count:
 
- 
- 
 
 Four-bit “Up” Counter
 ![image](https://user-images.githubusercontent.com/36288975/169644758-b2f4339d-9532-40c5-af40-8f4f8c942e2c.png)
-
 
 
 ## DOWN COUNTER 
@@ -57,32 +54,29 @@ Developed by:
 RegisterNumber:  
 */
 
-
-
+![image](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/50588f3c-a965-4c9d-a106-6b0140eec8d4)
 
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
-
-
-
-
-
+![image](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/6f8fab9b-40ec-40e6-924d-51d0b8717c0c)
 
 
 
 ### TIMING DIGRAMS FOR COUNTER  
 
 
-
+![upcounters EX NO 6](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/2728b898-0b7e-462a-8cce-9099979f5e4f)
 
 
 ### TRUTH TABLE 
 
-
-
-
+![image](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/3c3c0f50-016e-40c9-94b1-1580d90991f3)
 
 
 ### RESULTS 
+```
+By this we have verified the truth table of 4-bit up-counter using verilog
+
+```
