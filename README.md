@@ -19,11 +19,6 @@ Binary count sequence, paying attention to patterns preceding the “toggling”
 
 Note that each bit in this four-bit sequence toggles when the bit before it (the bit having a lesser significance, or place-weight), toggles in a particular direction: from 1 to 0.
 
-
-
- 
- 
-
 Starting with four J-K flip-flops connected in such a way to always be in the “toggle” mode, we need to determine how to connect the clock inputs in such a way so that each succeeding bit toggles when the bit before it transitions from 1 to 0.
 
 The Q outputs of each flip-flop will serve as the respective binary bits of the final, four-bit count:
@@ -43,36 +38,78 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+```
+1.Create a New Project: Open Quartus and create a new project by selecting "File" > "New Project Wizard." Follow the wizard's instructions to set up your project, including specifying the project name, location, and target device (FPGA). 2.Create a New Design File:
 
+Once the project is created, right-click on the project name in the Project Navigator and select "Add New File." Choose "Verilog HDL File" or "VHDL File," depending on your chosen hardware description language. ⦁ Write the Combinational Logic Code:
 
+Open the newly created Verilog or VHDL file and write the code for your combinational logic. 3.Compile the Project: To compile the project, click on "Processing" > "Start Compilation" in the menu. Quartus will analyze your code, synthesize it into a netlist, and perform optimizations based on your target FPGA device. 4.Analyze and Fix Errors:
 
+If there are any errors or warnings during the compilation process, Quartus will display them in the Messages window. Review and fix any issues in your code if necessary. View the RTL diagram. 5.Verification: Click on "File" > "New" > "Verification/Debugging Files" > "University Program VWF". Once Waveform is created Right Click on the Input/Output Panel > " Insert Node or Bus" > Click on Node Finder > Click On "List" > Select All.
+
+Give the Input Combinations according to the Truth Table and then simulate the Output Waveform.
+```
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: R.LOGA MITHRA
+RegisterNumber: 212223100027
 
-![image](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/50588f3c-a965-4c9d-a106-6b0140eec8d4)
+UP COUNTER:
 
+module up_counter(clk,q1,q2,q3);
+input clk;
+output reg q1,q2,q3;
+always@(posedge clk)
+begin
+q3=(q1&q2)^q3;
+q2=q1^q2;
+q1=1^q1;
+end 
+endmodule
 
+DOWN COUNTER:
+
+module COUNTER(clk,q1,q2,q3);
+input clk;
+output reg q1,q2,q3;
+always@(posedge clk)
+begin
+q3=((~q2)&(~q1))^q3;
+q2=(~q1)^q2;
+q1=1^q1;
+end
+endmodule
+```
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
-![image](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/6f8fab9b-40ec-40e6-924d-51d0b8717c0c)
+UP COUNTER 
 
+![WhatsApp Image 2023-12-27 at 17 59 13_4c5ec933](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/bc00668f-bc10-4226-9d49-4ac98b46490b)
+
+DOWN COUNTER
+
+![WhatsApp Image 2023-12-27 at 17 59 30_922088c6](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/874495e2-00cd-4d5f-ae17-32c145b06ed9)
 
 
 ### TIMING DIGRAMS FOR COUNTER  
+UP COUNTER:
 
+![upcounters EX NO 6](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/42cfc65d-b3f9-4637-a04b-1469f45dd782)
 
-![upcounters EX NO 6](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/2728b898-0b7e-462a-8cce-9099979f5e4f)
+DOWN COUNTER:
 
+![WhatsApp Image 2023-12-27 at 14 04 38_3d97a816](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/74375ec9-0f4c-4991-8f47-34cc70a7073b)
 
 ### TRUTH TABLE 
+UP COUNTER:
 
-![image](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/3c3c0f50-016e-40c9-94b1-1580d90991f3)
+![image](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/4f3112ef-38ba-40c2-8739-50ae12633b76)
+
+DOWN COUNTER:
+
+![image](https://github.com/mithra916/Exp-7-Synchornous-counters-/assets/149986612/33435922-96a7-4201-8c85-9e5a1e2a7a1c)
 
 
 ### RESULTS 
